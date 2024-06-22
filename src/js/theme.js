@@ -1,3 +1,4 @@
+import { loadFromLS } from './localstorage';
 import { refs } from './refs';
 
 export function onLoadedDomTheme() {
