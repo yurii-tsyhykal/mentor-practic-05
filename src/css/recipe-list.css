@@ -1,0 +1,9 @@
+.recipes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.recipe-item {
+  flex-basis: calc((100% - 75px) / 4);
+}
