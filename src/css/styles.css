@@ -5,6 +5,7 @@
   |============================
 */
 @import url('./reset.css');
+@import url('./theme.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -20,9 +21,4 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-}
-
-.dark-theme {
-  background-color: #242424;
-  transition: background-color 270ms linear;
 }
