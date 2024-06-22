@@ -2,13 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link type="image/svg+xml" href="/favicon.svg" rel="icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link href="./css/styles.css" rel="stylesheet" />
   </head>
   <body>
-  
-    <script type="module" src="./main.js"></script>
+    <div class="container-switch-btn">
+      <label for="switch-theme"
+        ><input id="switch-theme" name="switch-theme" type="checkbox"
+      /></label>
+    </div>
+
+    <script src="./main.js" type="module"></script>
   </body>
 </html>

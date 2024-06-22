@@ -21,3 +21,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+.dark-theme {
+  background-color: #242424;
+  transition: background-color 270ms linear;
+}
