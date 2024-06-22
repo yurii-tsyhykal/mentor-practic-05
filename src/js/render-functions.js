@@ -9,14 +9,14 @@ function recipeTamplate({ image, name, difficulty, cuisine }) {
         src=${image}
         alt=${name}
     />
-    <div class="recipe-text">
+    <div class="recipe-dscr">
         <p class="recipe-name">Name: ${name}</p>
         <p class="recipe-cuisine">Cuisine: ${cuisine}</p>
         <p class="recipe-difficulty">Difficulty: ${difficulty}</p>
     </div>;`
 };
 
-export function recipeTamplatesList(data) {
-  const arr = data.hits;
+export function recipeTamplateList(data) {
+  const arr = data.recipes;
   return arr.map(recipeTamplate).join('');
 };
