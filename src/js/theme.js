@@ -1,6 +1,6 @@
 import { refs } from './refs';
 
-export function initTheme() {
+export function onLoadedDomTheme() {
   const checkTheme = loadFromLS('theme');
   if (checkTheme === 'dark') {
     refs.bodyEl.classList.toggle('dark-theme');
