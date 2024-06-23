@@ -5,6 +5,8 @@
   |============================
 */
 @import url('./reset.css');
+@import url('./recipe-list.css');
+@import url('./modal.css');
 @import url('./theme.css');
 
 :root {
