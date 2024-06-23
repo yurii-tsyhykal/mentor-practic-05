@@ -1,0 +1,75 @@
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: 80%;
+  background-color: #fff;
+  border-radius: 20px;
+  gap: 25px;
+}
+
+.close-button {
+  display: flex;
+  line-height: 20px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  border: 1px solid black;
+  background-color: transparent;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.common-container {
+  display: flex;
+  gap: 15px;
+}
+
+.descr-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 50%;
+}
+
+.large-image {
+  width: 50%;
+}
