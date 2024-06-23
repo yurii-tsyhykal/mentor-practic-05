@@ -1,0 +1,8 @@
+body {
+  margin: 0px;
+}
+
+.dark-theme {
+  background-color: #242424;
+  transition: background-color 270ms linear;
+}
