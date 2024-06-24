@@ -8,14 +8,41 @@
     
     <script type="module" crossorigin src="/mentor-practic-05/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/mentor-practic-05/assets/vendor-bdb8a163.js">
-    <link rel="stylesheet" href="/mentor-practic-05/assets/index-f46fc926.css">
+    <link rel="stylesheet" href="/mentor-practic-05/assets/index-ca8ea901.css">
   </head>
   <body>
-    <div class="container-switch-btn">
-      <label for="switch-theme"
-        ><input id="switch-theme" name="switch-theme" type="checkbox"
-      /></label>
-    </div>
+    <div class="container">
+      <div class="forms">
+        <form class="form">
+          <input type="text" class="query" name="query" placeholder="Search recipes">
+          <button type="submit" name="submit" class="submit">Search</button>
+          <label for="switch-theme" class="theme">
+                <svg class="sun" height="30" width="30">
+                  <use href="/mentor-practic-05/assets/icons-9ea402f2.svg#sun"></use>
+                </svg>
+          </label>
+          <input id="switch-theme" name="switch-theme" type="checkbox"/>
+      </form>
+        <form class="filter" >
+              <svg class="filter-icon" height="15" width="15">
+                  <use href="/mentor-practic-05/assets/icons-9ea402f2.svg#filter"></use>
+              </svg>
+              <div>
+              <div>
+              <input id="easy" type="checkbox" class="difficulty-el" name="easy" value="Easy">
+              <label for="easy" class="country">Easy</label>
+              </div>
+              <div>
+              <input id="medium" type="checkbox" class="difficulty-el" name="medium" value="Medium">
+              <label for="medium" class="country">Medium</label>
+              </div>
+              <div>
+              <input id='hard' type="checkbox" class="difficulty-el" name="hard" value="Hard">
+              <label for="hard" class="country">Hard</label></div>          
+              </div>
+        </form>
+
+      </div>
     <div class="backdrop hidden">
       <div class="modal">
           <button class="close-button">X</button>
@@ -24,6 +51,7 @@
       </div>
     </div>
     <ul class="recipes"></ul>
+    </div>
     
   </body>
 </html>

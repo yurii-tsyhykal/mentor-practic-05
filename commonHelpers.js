@@ -1,24 +1,33 @@
-import{a}from"./assets/vendor-bdb8a163.js";(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const c of t)if(c.type==="childList")for(const r of c.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&n(r)}).observe(document,{childList:!0,subtree:!0});function o(t){const c={};return t.integrity&&(c.integrity=t.integrity),t.referrerPolicy&&(c.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?c.credentials="include":t.crossOrigin==="anonymous"?c.credentials="omit":c.credentials="same-origin",c}function n(t){if(t.ep)return;t.ep=!0;const c=o(t);fetch(t.href,c)}})();a.defaults.baseURL="https://dummyjson.com/recipes";async function u(){const{data:s}=await a("");return s}async function m(s){const{data:e}=await a(`/${s}`);return e}function f(s,e){const o=JSON.stringify(e);localStorage.setItem(s,o)}function y(s){const e=localStorage.getItem(s);try{return JSON.parse(e)}catch{return e}}const i={recipesList:document.querySelector(".recipes"),bodyEl:document.querySelector("body"),switchEl:document.querySelector("#switch-theme"),backdrop:document.querySelector(".backdrop"),modal:document.querySelector(".modal"),parcing:document.querySelector(".parcing")};function b(s){const e=s.map(({id:o,image:n,name:t,difficulty:c,cuisine:r})=>`<li class="recipe-item" data-id='${o}'>
+import{a as d}from"./assets/vendor-bdb8a163.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))c(i);new MutationObserver(i=>{for(const r of i)if(r.type==="childList")for(const o of r.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&c(o)}).observe(document,{childList:!0,subtree:!0});function n(i){const r={};return i.integrity&&(r.integrity=i.integrity),i.referrerPolicy&&(r.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?r.credentials="include":i.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function c(i){if(i.ep)return;i.ep=!0;const r=n(i);fetch(i.href,r)}})();function f(e,t){const n=[];return t.forEach(c=>{e.includes(c.difficulty)&&n.push(c)}),n}d.defaults.baseURL="https://dummyjson.com/recipes";async function h(){const{data:e}=await d("");return e}async function g(e){const{data:t}=await d(`/${e}`);return t}async function y(e){const{data:t}=await d("/search",{params:{q:e}});return t}const s={recipesList:document.querySelector(".recipes"),bodyEl:document.querySelector("body"),switchEl:document.querySelector("#switch-theme"),form:document.querySelector(".form"),backdrop:document.querySelector(".backdrop"),modal:document.querySelector(".modal"),parcing:document.querySelector(".parcing"),recipes:"",applyFilter:document.querySelector(".filter"),theme:document.querySelector(".theme")};function a(e){s.recipesList.innerHTML="";const t=e.map(({id:n,image:c,name:i,difficulty:r,cuisine:o})=>`<li class="recipe-item" data-id='${n}'>
     <img
         class="recipe-image"
-        src=${n}
-        alt=${t}
+        src=${c}
+        alt=${i}
     />
     <div class="recipe-dscr">
-        <p class="recipe-name">Name: ${t}</p>
-        <p class="recipe-cuisine">Cuisine: ${r}</p>
-        <p class="recipe-difficulty">Difficulty: ${c}</p>
-    </div>`).join("");i.recipesList.insertAdjacentHTML("beforeend",e)}function g({name:s,difficulty:e,cuisine:o,caloriesPerServing:n,image:t,ingredients:c,instructions:r,prepTimeMinutes:d,cookTimeMinutes:l}){const p=`<h2 class="food-name"><b>Name:</b> ${s}</h2>
+        <p class="recipe-name">Name: ${i}</p>
+        <p class="recipe-cuisine">Cuisine: ${o}</p>
+        <p class="recipe-difficulty">Difficulty: ${r}</p>
+    </div>`).join("");s.recipesList.insertAdjacentHTML("beforeend",t)}function L({name:e,difficulty:t,cuisine:n,caloriesPerServing:c,image:i,ingredients:r,instructions:o,prepTimeMinutes:u,cookTimeMinutes:m}){const p=`<h2 class="food-name"><b>Name:</b> ${e}</h2>
           <div class="common-container">
             <div class="descr-container">
-              <p class="food-cuisine"><b>Cuisine:</b> ${o}</p>
-              <p class="difficulty"><b>Difficulty:</b> ${e}</p>
-              <p class="ingredients"><b>Inredients:</b> ${c}</p>
-              <p class="instructions"><b>Instructions:</b> ${r}</p>
-              <p class="prep-time"><b>Preparation time:</b> ${d} minutes</p>
-              <p class="cook-time"><b>Cook time:</b> ${l} minutes</p>
-              <p class="calories"><b>Calories:</b> ${n}</p>
+              <p class="food-cuisine"><b>Cuisine:</b> ${n}</p>
+              <p class="difficulty"><b>Difficulty:</b> ${t}</p>
+              <p class="ingredients"><b>Inredients:</b> ${r}</p>
+              <p class="instructions"><b>Instructions:</b> ${o}</p>
+              <p class="prep-time"><b>Preparation time:</b> ${u} minutes</p>
+              <p class="cook-time"><b>Cook time:</b> ${m} minutes</p>
+              <p class="calories"><b>Calories:</b> ${c}</p>
             </div>
-            <img class="large-image" src="${t}" alt="Food image" />
-          </div>`;i.parcing.insertAdjacentHTML("beforeend",p)}function L(s){i.bodyEl.classList.toggle("dark-theme");const e="dark",o="theme";i.bodyEl.classList.contains("dark-theme")&&f(o,e)}async function h(s){const{recipes:e}=await u();b(e)}async function k(s){if(!s.target.closest("li"))return;i.parcing.innerHTML="";const e=s.target.closest("li").dataset.id,o=await m(e);i.backdrop.classList.remove("hidden"),g(o),i.backdrop.addEventListener("click",n=>{(n.target.classList.contains("backdrop")||n.target.classList.contains("close-button"))&&(i.backdrop.classList.add("hidden"),i.backdrop.removeEventListener)}),document.addEventListener("keyup",n=>{n.key==="Escape"&&(i.backdrop.classList.add("hidden"),i.backdrop.removeEventListener)})}function v(){y("theme")==="dark"&&i.bodyEl.classList.toggle("dark-theme")}document.addEventListener("DOMContentLoaded",v);document.addEventListener("DOMContentLoaded",h);document.addEventListener("click",k);i.switchEl.addEventListener("click",L);
+            <img class="large-image" src="${i}" alt="Food image" />
+          </div>`;s.parcing.insertAdjacentHTML("beforeend",p)}async function b(e){e.preventDefault();const t=e.target.elements.query.value.trim(),{recipes:n}=await y(t);s.recipes=n,n.length?a(n):s.recipesList.innerHTML='<h2 class="empty-result">No matches found</h2>'}function l(e,t){const n=JSON.stringify(t);localStorage.setItem(e,n)}function v(e){const t=localStorage.getItem(e);try{return JSON.parse(t)}catch{return t}}function k(e){s.bodyEl.classList.toggle("dark-theme"),s.modal.classList.toggle("dark-theme"),s.bodyEl.classList.contains("dark-theme")?(l("theme","dark"),s.theme.innerHTML=`
+      <svg class="moon" height="30" width="30">
+        <use href="./img/icons.svg#moon"></use>
+      </svg>`):(l("theme","white"),s.theme.innerHTML=`
+      <svg class="sun" height="30" width="30">
+        <use href="./img/icons.svg#sun"></use>
+      </svg>`)}async function E(e){const{recipes:t}=await h();s.recipes=t,a(t)}function S(e){e.preventDefault();const t=e.target.form,n=[];for(const i of t)i.checked&&n.push(i.value);if(!n.length)return a(s.recipes);const c=f(n,s.recipes);c.length?a(c):s.recipesList.innerHTML='<h2 class="empty-result">No matches found</h2>'}async function $(e){if(!e.target.closest("li"))return;s.parcing.innerHTML="";const t=e.target.closest("li").dataset.id,n=await g(t);s.backdrop.classList.remove("hidden"),L(n),s.backdrop.addEventListener("click",c=>{(c.target.classList.contains("backdrop")||c.target.classList.contains("close-button"))&&(s.backdrop.classList.add("hidden"),s.backdrop.removeEventListener)}),document.addEventListener("keyup",c=>{c.key==="Escape"&&(s.backdrop.classList.add("hidden"),s.backdrop.removeEventListener)})}function w(){v("theme")==="dark"&&(s.bodyEl.classList.toggle("dark-theme"),s.modal.classList.toggle("dark-theme"),s.theme.innerHTML=`
+      <svg class="moon" height="30" width="30">
+        <use href="./img/icons.svg#moon"></use>
+      </svg>`)}document.addEventListener("DOMContentLoaded",w);document.addEventListener("DOMContentLoaded",E);document.addEventListener("click",$);s.form.addEventListener("submit",b);s.switchEl.addEventListener("click",k);s.applyFilter.addEventListener("change",S);
 //# sourceMappingURL=commonHelpers.js.map
