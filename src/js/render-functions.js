@@ -1,6 +1,7 @@
 import { refs } from './refs';
 
 export function renderRecipesList(recipes) {
+  refs.recipesList.innerHTML = '';
   const markup = recipes
     .map(
       ({ id, image, name, difficulty, cuisine }) =>
