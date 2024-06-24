@@ -1,4 +1,5 @@
 .backdrop {
+  z-index: 1;
   position: fixed;
   left: 0;
   top: 0;
@@ -37,14 +38,15 @@
 
 .close-button {
   display: flex;
+  box-sizing: border-box;
   line-height: 20px;
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
   height: 30px;
   width: 30px;
-  border: 1px solid black;
-  background-color: transparent;
+  border: 1px solid gray;
+  background-color: #fff;
   position: absolute;
   right: 10px;
   top: 10px;
@@ -54,7 +56,8 @@
 }
 
 .close-button:hover {
-  background-color: #000;
+  border: none;
+  background-color: #4e75ff;
   color: #fff;
 }
 
@@ -72,4 +75,7 @@
 
 .large-image {
   width: 50%;
+}
+.food-name {
+  padding-bottom: 15px;
 }

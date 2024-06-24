@@ -1,8 +1,21 @@
 body {
   margin: 0px;
+  transition: background-color 270ms linear;
+}
+.dark-theme li {
+  border: 1px solid white;
 }
 
 .dark-theme {
   background-color: #242424;
-  transition: background-color 270ms linear;
+  color: white;
+  fill: white;
+}
+
+#switch-theme {
+  display: none;
+}
+.theme {
+  box-sizing: border-box;
+  height: 30px;
 }
