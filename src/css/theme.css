@@ -18,4 +18,5 @@ body {
 .theme {
   box-sizing: border-box;
   height: 30px;
+  cursor: pointer;
 }
