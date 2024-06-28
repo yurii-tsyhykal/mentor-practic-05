@@ -9,12 +9,14 @@ export function onClickChangeTheme(e) {
   refs.modal.classList.toggle('dark-theme');
   if (refs.bodyEl.classList.contains('dark-theme')) {
     saveToLS('theme', 'dark');
+    refs.theme.innerHTML = '';
     refs.theme.innerHTML = `
       <svg class="moon" height="30" width="30">
         <use href="/img/icons.svg#moon"></use>
       </svg>`;
   } else {
     saveToLS('theme', 'white');
+    refs.theme.innerHTML = '';
     refs.theme.innerHTML = `
       <svg class="sun" height="30" width="30">
         <use href="/img/icons.svg#sun"></use>
