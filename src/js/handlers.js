@@ -17,7 +17,6 @@ export function onClickChangeTheme(e) {
     saveToLS('theme', 'white');
     moonBox.classList.add('visually-hidden');
     sunBox.classList.remove('visually-hidden');
-    
   }
 }
 
