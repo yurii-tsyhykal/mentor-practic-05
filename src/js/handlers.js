@@ -7,20 +7,16 @@ import { renderRecipesList } from './render-functions';
 export function onClickChangeTheme(e) {
   refs.bodyEl.classList.toggle('dark-theme');
   refs.modal.classList.toggle('dark-theme');
+  const sunBox = document.querySelector('.sun-container');
+  const moonBox = document.querySelector('.moon-container');
   if (refs.bodyEl.classList.contains('dark-theme')) {
     saveToLS('theme', 'dark');
-    refs.theme.innerHTML = '';
-    refs.theme.innerHTML = `
-      <svg class="moon" height="30" width="30">
-        <use href="/img/icons.svg#moon"></use>
-      </svg>`;
+    sunBox.classList.add('visually-hidden');
+    moonBox.classList.remove('visually-hidden');
   } else {
     saveToLS('theme', 'white');
-    refs.theme.innerHTML = '';
-    refs.theme.innerHTML = `
-      <svg class="sun" height="30" width="30">
-        <use href="/img/icons.svg#sun"></use>
-      </svg>`;
+    moonBox.classList.add('visually-hidden');
+    sunBox.classList.remove('visually-hidden');
   }
 }
 
