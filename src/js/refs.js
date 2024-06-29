@@ -9,4 +9,5 @@ export const refs = {
   recipes: '',
   applyFilter: document.querySelector('.filter'),
   theme: document.querySelector('.theme'),
+  moonBox: document.querySelector('.moon-container'),
 };
