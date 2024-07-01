@@ -8,12 +8,12 @@ export function onLoadedDomTheme() {
   refs.theme.innerHTML = `
     <div class="moon-container">
       <svg class="moon" height="30" width="30">
-        <use href="/img/icons.svg#moon"></use>
+        <use href="./img/icons.svg#moon"></use>
       </svg>
     </div>
     <div class="sun-container">
       <svg class="sun" height="30" width="30">
-        <use href="/img/icons.svg#sun"></use>
+        <use href="./img/icons.svg#sun"></use>
       </svg>
     </div>`;
   if (checkTheme === 'dark') {
