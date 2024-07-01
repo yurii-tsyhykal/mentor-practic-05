@@ -8,21 +8,21 @@ export function onLoadedDomTheme() {
   refs.theme.innerHTML = `
     <div class="moon-container">
       <svg class="moon" height="30" width="30">
-        <use href="./img/icons.svg#moon"></use>
+        <use href="./src/img/icons.svg#moon"></use>
       </svg>
     </div>
     <div class="sun-container">
       <svg class="sun" height="30" width="30">
-        <use href="./img/icons.svg#sun"></use>
+        <use href="./src/img/icons.svg#sun"></use>
       </svg>
     </div>`;
+  const sunBox = document.querySelector('.sun-container');
+  const moonBox = document.querySelector('.moon-container');
   if (checkTheme === 'dark') {
-    const sunBox = document.querySelector('.sun-container');
     refs.bodyEl.classList.add('dark-theme');
     refs.modal.classList.add('dark-theme');
     sunBox.classList.add('visually-hidden');
   } else {
-    const moonBox = document.querySelector('.moon-container');
     moonBox.classList.add('visually-hidden');
   }
 }
